@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
   def index
     @users = User.without_user(current_user)
+    respond_to do |format|
+      format.html
+      format.json { render :json =>  @users.to_json(:only => [:id, :status], :methods => [:full_name]) }
+    end
   end
 
   def status

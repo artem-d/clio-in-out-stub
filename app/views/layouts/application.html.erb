@@ -17,6 +17,13 @@
           <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
         <% end %>
       </div>
+
+      <div id="navbar">
+        <ul>
+          <%= content_tag(:li, link_to("Home", root_path)) %>
+          <%= content_tag(:li, link_to("Teams", teams_path)) %>
+        </ul>
+      </div>
     </div>
     <hr>
 

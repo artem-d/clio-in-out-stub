@@ -37,6 +37,14 @@ group :development, :test do
   gem 'simplecov'
 end
 
+gem 'thin'
+
+group :development do
+  gem 'quiet_assets'
+  # gem 'webrick', '1.8.23.2'
+end
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
