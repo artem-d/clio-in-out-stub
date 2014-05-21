@@ -7,6 +7,7 @@ ClioInOutStub::Application.routes.draw do
       get :status
     end
   end
+  resources :teams
 
   root :to => "users#index"
 

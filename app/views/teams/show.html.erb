@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @team.name %>
+</p>
+
+<div id="users-container">
+  <% @users.each do |user| %>
+    <p> 
+      <%= link_to(user.full_name, user) %>
+    </p>
+  <% end %>
+</div>
+
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

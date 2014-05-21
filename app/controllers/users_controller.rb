@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.without_user(current_user)
+    @users = User.without_user(current_user).by_team(params[:team_id])
     respond_to do |format|
       format.html
       format.json { render :json =>  @users.to_json(:only => [:id, :status], :methods => [:full_name]) }
@@ -20,7 +20,8 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])    
+    @user = User.find(params[:id])
+    @teams = Team.all
   end
 
   def update

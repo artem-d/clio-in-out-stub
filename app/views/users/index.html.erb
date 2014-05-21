@@ -2,12 +2,14 @@
   <span class="name"> My status </span>
   <span class="status status-<%=current_user.status%>"> <%= current_user.status %> </span>
   <%= link_to("Edit", edit_user_path(current_user), :class => "update-link") %>
+  <%= link_to(current_user.team.name, root_path(team_id: current_user.team.id)) if current_user.team.present? %>
 </p>
 
 <div id="users-container">
   <% @users.each do |user| %>
     <p> 
       <%= name_with_status(user.full_name, user.status, user.id) %>
+      <%= link_to_team(user) %>
     </p>
   <% end %>
 </div>

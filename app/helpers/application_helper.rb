@@ -6,4 +6,7 @@ module ApplicationHelper
       link_to("Update", status_user_path(user_id), :class => "update-link")
   end
 
+  def link_to_team(user)
+    link_to(user.team.name, root_path(team_id: user.team.id)) unless user.team.blank?
+  end
 end
