@@ -30,11 +30,16 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem "guard-rspec"
+  gem "capybara"
+  gem 'webrat'
   gem 'faker'
   gem 'debugger'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'simplecov'
+  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 gem 'thin'
